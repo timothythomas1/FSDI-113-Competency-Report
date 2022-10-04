@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Confirm
+{% endblock title %}
+
+{% block content %}
+<h1>Are you sure you want to delete the post titled:</h1>
+<form method="POST">
+    {% csrf_token %}
+    <h2>"{{ issue.title }}" <span id="question-delete">?</span></h2>
+    <div class="author-options" id="confirm-del">
+        <a id="log-in-icon" 
+        href="{% url 'list' %}" 
+        class="card-link btn btn-danger btn-lg active">
+            Confirm 
+            <i class="fa-solid fa-dumpster-fire"></i>
+        </a>
+    </div>
+</form>
+{% endblock content %}
